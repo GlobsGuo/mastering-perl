@@ -1,2 +1,2 @@
 # mastering_perl
-Codes for exercises in Mastering Perl.
+Codes for example in Mastering Perl.
