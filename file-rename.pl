@@ -5,7 +5,6 @@ use warnings;
 use diagnostics;
 
 chdir ( $ARGV[0] )if ( defined $ARGV[0] );
-print "$ENV{PATH}\n";
 foreach my $dir (glob("*")) {
 	my $dh;
 	if ( -d $dir ) {
