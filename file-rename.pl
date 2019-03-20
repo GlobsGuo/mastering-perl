@@ -5,6 +5,7 @@ use warnings;
 use diagnostics;
 
 chdir ( $ARGV[0] )if ( defined $ARGV[0] );
+print "$ENV{PATH}\n";
 foreach my $dir (glob("*")) {
 	my $dh;
 	if ( -d $dir ) {
@@ -16,20 +17,15 @@ foreach my $dir (glob("*")) {
 		print "$dir/$_\n";
 		my $original = $_;
 		next if ( !/_/ );
-		my $updated = map { s/_/-/g } $_;
-		print "$dir/$_\n";
-		my @args = ( "/usr/bin/git", "mv", "$original", "$updated" );
-		system @args 
-		#system "/usr/bin/git", "mv", $original, $updated 
-			|| die "git mv error";
-		#system "/usr/bin/git", "commit", "-m "update file name""
-		@args = ( "/usr/bin/git", "commit", "-m", "update file name" );
-		system @args 
-			|| die "git commit error";
-		@args = ( "/usr/bin/git", "push" );
-		system @args 
-		#system "/usr/bin/git", "push"
-			|| die "git push error";
+		( my $updated = $original ) =~ s/_/-/g;
+		print "$dir/$updated\n";
+		print "$dir/$original\n";
+		my @args = ( "git", "mv", "$dir/$original", "$dir/$updated" );
+		system @args == 0 || die "git mv error";
+		@args = ( "git", "commit", "-m", "update file name" );
+		system @args == 0 || die "git commit error";
+		@args = ( "git", "push" );
+		system @args == 0 || die "git push error";
 	}
 	closedir $dh;
 }
