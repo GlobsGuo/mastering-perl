@@ -1,0 +1,6 @@
+file=foo.dat
+line=453
+field value
+field2 = value2
+long_continued_field This is a long \
+	line spanning two lines

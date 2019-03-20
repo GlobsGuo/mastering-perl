@@ -1,0 +1,8 @@
+book {
+	author = {
+		name="brian d foy";
+		email="brian.d.foy@gmail.com";
+	};
+	title="Mastering Perl";
+	publisher="O'Reilly Media";
+}
