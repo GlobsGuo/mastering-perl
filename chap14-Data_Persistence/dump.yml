@@ -1,0 +1,19 @@
+---
+Barney: Rubble
+Fred: Flintstone
+---
+- Fred
+- Barney
+- Betty
+- Wilma
+--- !!perl/hash:Business::ISBN10
+article_code: 10206
+checksum: 2
+common_data: 0596102062
+group_code: 0
+input_isbn: 0596102062
+isbn: 0596102062
+prefix: ''
+publisher_code: 596
+type: ISBN10
+valid: 1

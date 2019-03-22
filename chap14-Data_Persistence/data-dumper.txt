@@ -1,0 +1,10 @@
+%dumpedhash = (
+                'Fred' => 'Flintstone',
+                'Barney' => 'Rubble'
+              );
+@dumpedarray = (
+                 'Fred',
+                 'Barney',
+                 'Betty',
+                 'Wilma'
+               );
